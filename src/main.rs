@@ -1,25 +1,24 @@
 fn main() {
-    println!("Por  favor introduce tu edad");
-    let mut edad: String = String::new();
-    std::io::stdin().read_line(&mut edad).unwrap();
 
-    // Convertir esa edad a un numero
-    let edad_int: u8 = edad.trim().parse().unwrap();
+    let numero_1 = 420;
+    let numero_2 = 71;
+    let suma = numero_1 + numero_2;
 
-    if edad_int >= 18 {
-        println!("Bien, ¿llevas puestas zapatillas de lona? Y/n");
-        let mut zapatillas_de_lona: String = String::new();
-        std::io::stdin().read_line(&mut zapatillas_de_lona).unwrap();
+    loop {
+        println!("Escribe la suma de {} y {} ", numero_1, numero_2);
+
+        let mut suma_usuario: String = String::new();
         
-        let opt: String = zapatillas_de_lona.trim().to_uppercase().to_string();
+        std::io::stdin().read_line(&mut suma_usuario).unwrap();
 
+        let suma_usuario_int: i32 = suma_usuario.trim().parse().unwrap();
 
-        if opt == "Y" {
-            println!("Al boliche con zapatillas de lona no pasas pibe...");
+        if suma_usuario_int == suma {
+            println!("La suma es correcta");
+            break;
         } else {
-            println!("Pasa papá");
-        }
-    } else {
-        println!("Al boliche no pasas nene");
+            println!("La suma es incorrecta");
+        } 
     }
+
 }
